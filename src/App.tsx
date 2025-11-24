@@ -10,6 +10,9 @@ import EventsGallery from "./pages/EventsGallery";
 import Admissions from "./pages/Admissions";
 import Faculty from "./pages/Faculty";
 import VisionMission from "./pages/VisionMission";
+import AdminLogin from "./pages/AdminLogin";
+import AdminGallery from "./pages/AdminGallery";
+import Placements from "./pages/Placements";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/vision-mission" element={<VisionMission />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/gallery" element={<AdminGallery />} />
+          <Route path="/placements" element={<Placements />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -13,6 +13,7 @@ const Navbar = () => {
     { name: "Admissions", path: "/admissions" },
     { name: "Faculty", path: "/faculty" },
     { name: "Events & Gallery", path: "/events-gallery" },
+    { name: "Placements", path: "/placements" },
     { name: "Vision & Mission", path: "/vision-mission" },
     { name: "Contact", path: "/contact" },
   ];
