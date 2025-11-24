@@ -12,36 +12,12 @@ const Departments = () => {
   const departments = [
     {
       icon: Cpu,
-      name: "Electronics & Communication",
+      name: "Bachuler of Computer Application",
       image: deptElectronics,
       description: "Advanced training in electronic systems, communication networks, and embedded systems.",
-      subjects: ["Digital Electronics", "Microprocessors", "Signal Processing", "Communication Systems"],
-      facilities: ["Electronics Lab", "Communication Lab", "Microcontroller Lab"]
+      subjects: ["Programming Languages", "Microprocessors", "Signal Processing", "Communication Systems"],
+      facilities: ["programming Lab", "Communication Lab", "Microcontroller Lab"]
     },
-    {
-      icon: Cog,
-      name: "Mechanical Engineering",
-      image: deptMechanical,
-      description: "Comprehensive program covering design, manufacturing, and thermal engineering principles.",
-      subjects: ["Thermodynamics", "Machine Design", "Manufacturing", "CAD/CAM"],
-      facilities: ["Workshop", "CAD Lab", "Materials Testing Lab"]
-    },
-    {
-      icon: Zap,
-      name: "Electrical Engineering",
-      image: deptElectrical,
-      description: "Focus on power systems, electrical machines, and renewable energy technologies.",
-      subjects: ["Power Systems", "Electrical Machines", "Control Systems", "Renewable Energy"],
-      facilities: ["Power Electronics Lab", "Machines Lab", "Control Systems Lab"]
-    },
-    {
-      icon: BookOpen,
-      name: "Civil Engineering",
-      image: deptCivil,
-      description: "Training in construction technology, structural design, and infrastructure development.",
-      subjects: ["Structural Engineering", "Geotechnical", "Transportation", "Environmental"],
-      facilities: ["Surveying Lab", "Materials Lab", "CAD Lab"]
-    }
   ];
 
   return (

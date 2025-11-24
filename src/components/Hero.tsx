@@ -3,10 +3,10 @@ import heroImage from "@/assets/hero-college.jpg";
 
 const Hero = () => {
   const stats = [
-    { number: "189+", label: "Staff" },
-    { number: "712+", label: "Students" },
-    { number: "471+", label: "Trust Members" },
-    { number: "17", label: "Years" },
+    { number: "8+", label: "Staff" },
+    { number: "250+", label: "Students" },
+    { number: "40+", label: "Trust Members" },
+    { number: "5", label: "Years" },
   ];
 
   return (
@@ -31,7 +31,7 @@ const Hero = () => {
             className="space-y-6"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
-              Welcome to KLE SOCIETY'S COLLEGE OF BCA MAHALINGAPUR 
+              Welcome to <br /> KLE SOCIETY'S COLLEGE OF BCA 
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto">
               Empowering students with quality technical education and shaping future engineers

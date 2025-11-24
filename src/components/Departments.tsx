@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import electronicsImg from "@/assets/dept-electronics.jpg";
-import mechanicalImg from "@/assets/dept-mechanical.jpg";
-import electricalImg from "@/assets/dept-electrical.jpg";
-import civilImg from "@/assets/dept-civil.jpg";
+
 
 const Departments = () => {
   const departments = [
