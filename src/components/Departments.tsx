@@ -8,25 +8,11 @@ import civilImg from "@/assets/dept-civil.jpg";
 const Departments = () => {
   const departments = [
     {
-      name: "Electronics Engineering",
+      name: "Bachuler of Computer Application",
       image: electronicsImg,
-      description: "Advanced electronics and communication systems",
+      description: "Advanced Computer application systems",
     },
-    {
-      name: "Mechanical Engineering",
-      image: mechanicalImg,
-      description: "Design, manufacturing and thermal systems",
-    },
-    {
-      name: "Electrical Engineering",
-      image: electricalImg,
-      description: "Power systems and electrical technologies",
-    },
-    {
-      name: "Civil Engineering",
-      image: civilImg,
-      description: "Infrastructure and construction management",
-    },
+    
   ];
 
   return (
@@ -43,7 +29,7 @@ const Departments = () => {
             OUR DEPARTMENTS
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore our world-class engineering departments
+            Explore our world-class BCA departments
           </p>
         </motion.div>
 
