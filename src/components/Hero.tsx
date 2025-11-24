@@ -31,7 +31,7 @@ const Hero = () => {
             className="space-y-6"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
-              Welcome to JVM Polytechnic Terdal
+              Welcome to KLE SOCIETY'S COLLEGE OF BCA MAHALINGAPUR 
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto">
               Empowering students with quality technical education and shaping future engineers
