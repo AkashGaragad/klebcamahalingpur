@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <img 
               src={jvmLogo} 
-              alt="JVM Polytechnic Logo" 
+              alt="KLE BCA COLLEGE" 
               className="h-14 w-14 object-contain transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col">
