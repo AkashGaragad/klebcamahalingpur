@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold mb-4">JVM Polytechnic Terdal</h3>
+            <h3 className="text-xl font-bold mb-4">KLE SOCIETY'S COLLEGE OF BCA MAHALINGAPUR </h3>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
-              Excellence in technical education since 2008. Empowering students 
+              Excellence in technical education since 2022. Empowering students 
               to become skilled engineers and responsible citizens.
             </p>
           </div>
@@ -48,7 +48,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">JVM Polytechnic, Terdal, Karnataka</span>
+                <span className="text-sm">KLE SOCIETY'S COLLEGE OF BCA MAHALINGAPUR, Karnataka</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 flex-shrink-0" />
@@ -56,7 +56,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span className="text-sm">info@jvmpolytechnic.edu</span>
+                <span className="text-sm">klebcamahalingpur@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 pt-6">
           <p className="text-center text-sm text-primary-foreground/70">
-            © {new Date().getFullYear()} JVM Polytechnic Terdal. All rights reserved.
+            © {new Date().getFullYear()} KLE SOCIETY'S COLLEGE OF BCA MAHALINGAPUR . All rights reserved.
           </p>
         </div>
       </div>
