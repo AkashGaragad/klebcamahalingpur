@@ -42,10 +42,10 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            The JVM World
+            The BCA World
           </h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto leading-relaxed">
-            JVM Society embodies education, research, and healthcare, enriching lives and 
+            KLE Society embodies education, research, and healthcare, enriching lives and 
             empowering individuals to become responsible citizens. Driven by perseverance, 
             we offer diverse programs, making us a preferred study and research destination.
           </p>
