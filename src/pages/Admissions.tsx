@@ -1,11 +1,68 @@
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { FileText, CheckCircle, Calendar, Users, GraduationCap, Download } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Admissions = () => {
+  const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    phone: "",
+    date_of_birth: "",
+    gender: "",
+    address: "",
+    department: "",
+    previous_school: "",
+    percentage: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    const { error } = await supabase.from("admissions").insert({
+      ...formData,
+      percentage: parseFloat(formData.percentage),
+    });
+
+    if (error) {
+      toast({
+        title: "Submission Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Application Submitted!",
+        description: "We'll review your application and contact you soon.",
+      });
+      setFormData({
+        full_name: "",
+        email: "",
+        phone: "",
+        date_of_birth: "",
+        gender: "",
+        address: "",
+        department: "",
+        previous_school: "",
+        percentage: "",
+      });
+    }
+    setSubmitting(false);
+  };
+
   const eligibility = [
     "Passed 10th standard (SSLC) with minimum 35% marks",
     "Age between 14-40 years",
@@ -68,8 +125,14 @@ const Admissions = () => {
             </p>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto space-y-12">
-            <motion.div
+          <Tabs defaultValue="info" className="max-w-6xl mx-auto">
+            <TabsList className="grid w-full grid-cols-2 mb-8">
+              <TabsTrigger value="info">Information</TabsTrigger>
+              <TabsTrigger value="apply">Apply Now</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="info" className="space-y-12">
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -188,7 +251,154 @@ const Admissions = () => {
                 </CardContent>
               </Card>
             </motion.div>
-          </div>
+            </TabsContent>
+
+            <TabsContent value="apply">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Online Admission Form</CardTitle>
+                  <CardDescription>
+                    Fill in your details to apply for admission
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="full_name">Full Name *</Label>
+                        <Input
+                          id="full_name"
+                          value={formData.full_name}
+                          onChange={(e) =>
+                            setFormData({ ...formData, full_name: e.target.value })
+                          }
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email *</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) =>
+                            setFormData({ ...formData, email: e.target.value })
+                          }
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone *</Label>
+                        <Input
+                          id="phone"
+                          value={formData.phone}
+                          onChange={(e) =>
+                            setFormData({ ...formData, phone: e.target.value })
+                          }
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="date_of_birth">Date of Birth *</Label>
+                        <Input
+                          id="date_of_birth"
+                          type="date"
+                          value={formData.date_of_birth}
+                          onChange={(e) =>
+                            setFormData({ ...formData, date_of_birth: e.target.value })
+                          }
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="gender">Gender *</Label>
+                        <Select
+                          value={formData.gender}
+                          onValueChange={(value) =>
+                            setFormData({ ...formData, gender: value })
+                          }
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select gender" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="male">Male</SelectItem>
+                            <SelectItem value="female">Female</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="department">Department *</Label>
+                        <Select
+                          value={formData.department}
+                          onValueChange={(value) =>
+                            setFormData({ ...formData, department: value })
+                          }
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select department" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="Civil Engineering">
+                              Civil Engineering
+                            </SelectItem>
+                            <SelectItem value="Mechanical Engineering">
+                              Mechanical Engineering
+                            </SelectItem>
+                            <SelectItem value="Electrical Engineering">
+                              Electrical Engineering
+                            </SelectItem>
+                            <SelectItem value="Electronics & Communication">
+                              Electronics & Communication
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="previous_school">Previous School *</Label>
+                        <Input
+                          id="previous_school"
+                          value={formData.previous_school}
+                          onChange={(e) =>
+                            setFormData({ ...formData, previous_school: e.target.value })
+                          }
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="percentage">10th Percentage *</Label>
+                        <Input
+                          id="percentage"
+                          type="number"
+                          step="0.01"
+                          value={formData.percentage}
+                          onChange={(e) =>
+                            setFormData({ ...formData, percentage: e.target.value })
+                          }
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="address">Address *</Label>
+                      <Textarea
+                        id="address"
+                        value={formData.address}
+                        onChange={(e) =>
+                          setFormData({ ...formData, address: e.target.value })
+                        }
+                        required
+                      />
+                    </div>
+                    <Button type="submit" size="lg" disabled={submitting}>
+                      {submitting ? "Submitting..." : "Submit Application"}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
       <Footer />

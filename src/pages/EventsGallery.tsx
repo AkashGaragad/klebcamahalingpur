@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +8,21 @@ import { motion } from "framer-motion";
 import { Calendar, Image as ImageIcon } from "lucide-react";
 
 const EventsGallery = () => {
+  const [gallery, setGallery] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      const { data } = await supabase
+        .from("gallery_images")
+        .select("*")
+        .order("created_at", { ascending: false });
+      
+      if (data) setGallery(data);
+    };
+
+    fetchGallery();
+  }, []);
+
   const events = [
     {
       title: "Annual Tech Fest 2024",
@@ -32,12 +49,6 @@ const EventsGallery = () => {
       image: "/placeholder.svg"
     }
   ];
-
-  const gallery = Array(12).fill(null).map((_, i) => ({
-    id: i + 1,
-    title: `Campus Photo ${i + 1}`,
-    image: "/placeholder.svg"
-  }));
 
   return (
     <div className="min-h-screen">
@@ -104,11 +115,13 @@ const EventsGallery = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.05 }}
-                    className="aspect-square bg-muted rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                    className="aspect-square rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                   >
-                    <div className="w-full h-full flex items-center justify-center">
-                      <ImageIcon className="w-12 h-12 text-muted-foreground" />
-                    </div>
+                    <img
+                      src={photo.image_url}
+                      alt={photo.title}
+                      className="w-full h-full object-cover"
+                    />
                   </motion.div>
                 ))}
               </div>
