@@ -10,9 +10,11 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Departments", path: "/departments" },
+    { name: "Admissions", path: "/admissions" },
+    { name: "Faculty", path: "/faculty" },
+    { name: "Events & Gallery", path: "/events-gallery" },
     { name: "Vision & Mission", path: "/vision-mission" },
-    { name: "About Us", path: "/about" },
-    { name: "Contact Us", path: "/contact" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
