@@ -12,7 +12,12 @@ const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url(${heroImage})`,
+        }}
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
       </div>
 
