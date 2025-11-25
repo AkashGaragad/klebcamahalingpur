@@ -8,37 +8,37 @@ import { Mail, Phone, Award } from "lucide-react";
 const Faculty = () => {
   const facultyMembers = [
     {
-      name: "Dr. Rajesh Kumar",
+      name: "prof,Shivanda patil",
       designation: "Principal",
       department: "Administration",
-      qualification: "Ph.D. in Mechanical Engineering",
-      experience: "25 years",
-      email: "principal@jvmpolytechnic.edu",
+      qualification: "MCA",
+      experience: "10 years",
+      email: "Shivandapatil2@gmail.com",
       phone: "+91 12345 67890",
       specialization: "Leadership & Academic Administration"
     },
     {
-      name: "Prof. Anita Sharma",
+      name: "Prof. Anand Uradi",
       designation: "Head of Department",
-      department: "Electronics & Communication",
+      department: "M.Tech",
       qualification: "M.Tech in VLSI Design",
-      experience: "18 years",
+      experience: "8 years",
       email: "anita.sharma@jvmpolytechnic.edu",
       phone: "+91 12345 67891",
       specialization: "Digital Systems & VLSI"
     },
     {
-      name: "Mr. Suresh Patil",
-      designation: "Senior Lecturer",
+      name: "Prof.Vinayak badiger",
+      designation: "Lecturer",
       department: "Mechanical Engineering",
       qualification: "M.Tech in Production Engineering",
-      experience: "15 years",
+      experience: "10 years",
       email: "suresh.patil@jvmpolytechnic.edu",
       phone: "+91 12345 67892",
       specialization: "Manufacturing & CAD/CAM"
     },
     {
-      name: "Mrs. Priya Desai",
+      name: "prof. Suma K",
       designation: "Lecturer",
       department: "Electrical Engineering",
       qualification: "M.Tech in Power Systems",
