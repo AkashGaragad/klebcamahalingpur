@@ -8,7 +8,7 @@ import { Mail, Phone, Award } from "lucide-react";
 const Faculty = () => {
   const facultyMembers = [
     {
-      name: "prof,Shivanda patil",
+      name: "Prof. Shivanand Patil",
       designation: "Principal",
       department: "Administration",
       qualification: "MCA",
@@ -28,7 +28,7 @@ const Faculty = () => {
       specialization: "Digital Systems & VLSI"
     },
     {
-      name: "Prof.Vinayak badiger",
+      name: "Prof.Vinayak Badiger",
       designation: "Lecturer",
       department: "Mechanical Engineering",
       qualification: "M.Tech in Production Engineering",
